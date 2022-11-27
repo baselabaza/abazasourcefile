@@ -24,14 +24,14 @@ def updateMsgs(client, message,redis):
   title = message.chat.title
   rank = isrank(redis,userID,chatID)
   text = message.text
-  ADDed = """◀️꒐ بواسطه ⌁ {} 
-  ✅꒐ {} بالفعل مفعله في المجموعة"""
-  ADD = """◀️꒐ بواسطه ⌁ {} 
-  ✅꒐ تم تفعيل {} في المجموعة"""
-  unADDed = """◀️꒐ بواسطه ⌁ {} 
-  ❎꒐ {} بالفعل معطله في المجموعة"""
-  unADD = """◀️꒐ بواسطه ⌁ {} 
-  ❎꒐ تم تعطيل {} في المجموعة"""
+  ADDed = """꒐ بواسطه ⌁ {} 
+  ꒐ {} بالفعل مفعله في المجموعة"""
+  ADD = """꒐ بواسطه ⌁ {} 
+  ꒐ تم تفعيل {} في المجموعة"""
+  unADDed = """꒐ بواسطه ⌁ {} 
+  ꒐ {} بالفعل معطله في المجموعة"""
+  unADD = """꒐ بواسطه ⌁ {} 
+  ꒐ تم تعطيل {} في المجموعة"""
 
   if (rank is not False or rank is not  0 or rank != "vip"):
 
@@ -71,5 +71,5 @@ def updateMsgs(client, message,redis):
 
   if text and re.search("^نقاطي$",text):
     points = (redis.hget("{}Nbot:{}:points".format(BOT_ID,chatID),userID) or 0)
-    Bot("sendMessage",{"chat_id":chatID,"text":"🔢꒐ نقاطك :- ({})".format(points),"reply_to_message_id":message.id,"parse_mode":"html","disable_web_page_preview":True})
+    Bot("sendMessage",{"chat_id":chatID,"text":"꒐ نقاطك :- ({})".format(points),"reply_to_message_id":message.id,"parse_mode":"html","disable_web_page_preview":True})
 
